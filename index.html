@@ -1,0 +1,550 @@
+<!doctype html>
+<html lang="es-BO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AMÉ Specialty Coffee · Santa Cruz de la Sierra</title>
+<meta name="description" content="AMÉ Specialty Coffee: café de especialidad, cocina con sabor cruceño y viernes acústicos en Equipetrol y Banzer, Santa Cruz de la Sierra. De 07:00 a 23:00.">
+<meta name="theme-color" content="#13100e">
+<meta property="og:title" content="AMÉ Specialty Coffee · Santa Cruz de la Sierra">
+<meta property="og:description" content="Del primer café a la última canción. Equipetrol y Banzer, de 07:00 a 23:00.">
+<meta property="og:image" content="assets/img/acustico-1.webp">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/img/logo-instagram.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/img/hero-noche-poster.webp">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CafeOrCoffeeShop",
+  "name": "AMÉ Specialty Coffee",
+  "servesCuisine": ["Café de especialidad", "Cocina boliviana"],
+  "telephone": "+591 75026695",
+  "openingHours": "Mo-Su 07:00-23:00",
+  "sameAs": ["https://www.instagram.com/ame.specialtycoffee/", "https://www.facebook.com/amecafebar/"],
+  "department": [
+    {"@type": "CafeOrCoffeeShop", "name": "AMÉ Equipetrol", "address": {"@type": "PostalAddress", "streetAddress": "Shopping Fidalga, Av. San Martín", "addressLocality": "Santa Cruz de la Sierra", "addressCountry": "BO"}},
+    {"@type": "CafeOrCoffeeShop", "name": "AMÉ Banzer", "address": {"@type": "PostalAddress", "streetAddress": "Shopping Fidalga, Av. Banzer", "addressLocality": "Santa Cruz de la Sierra", "addressCountry": "BO"}}
+  ]
+}
+</script>
+<style>
+html,body{background:#13100e}
+:root{
+  --bg:#13100e; --bg-2:#1b1714; --card:#211c19; --taupe:#5b5350;
+  --ink:#f3ece1; --ink-80:rgba(243,236,225,.8); --ink-60:rgba(243,236,225,.62); --ink-40:rgba(243,236,225,.42);
+  --line:rgba(243,236,225,.12); --green:#4fae78;
+  --serif:"Instrument Serif", "Times New Roman", serif;
+  --sans:"Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --ease:cubic-bezier(.22,1,.36,1);
+  --pad:clamp(20px,4vw,64px);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{overflow-x:clip;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;letter-spacing:-.01em;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:clip}
+::selection{background:rgba(79,174,120,.35);color:#fff}
+img,video{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1360px;margin:0 auto;padding:0 var(--pad)}
+.label{font-size:11.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-60)}
+.label .rule{display:inline-block;width:32px;height:1px;background:currentColor;vertical-align:middle;margin-right:12px;opacity:.7}
+.serif{font-family:var(--serif);font-weight:400;letter-spacing:-.02em}
+em{font-family:var(--serif);font-style:italic;font-weight:400}
+
+/* grain */
+.grain{position:fixed;inset:0;pointer-events:none;z-index:100;opacity:.07;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:12px;min-height:48px;padding:6px 6px 6px 24px;border-radius:999px;font-size:14.5px;font-weight:500;letter-spacing:-.005em;transition:background .25s,color .25s,transform .2s}
+.btn:active{transform:scale(.97)}
+.btn .disc{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;transition:transform .3s var(--ease)}
+.btn:hover .disc{transform:rotate(-45deg)}
+.btn-primary{background:var(--ink);color:#16120f}
+.btn-primary .disc{background:#16120f;color:var(--ink)}
+.btn-primary:hover{background:#fff}
+.btn-ghost{padding:6px 22px;border:1px solid var(--line);color:var(--ink);background:rgba(243,236,225,.04);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.btn-ghost:hover{background:rgba(243,236,225,.1)}
+
+/* nav */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .35s,border-color .35s,backdrop-filter .35s;border-bottom:1px solid transparent}
+.nav.scrolled{background:rgba(19,16,14,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-color:var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:76px}
+.logo{display:block;width:118px;color:var(--ink)}
+.logo svg{width:100%;height:auto;display:block}
+.nav-links{display:flex;gap:34px;font-size:14px;color:var(--ink-80)}
+.nav-links a{position:relative;padding:6px 0}
+.nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease)}
+.nav-links a:hover{color:var(--ink)}
+.nav-links a:hover::after{transform:scaleX(1)}
+.nav .btn{min-height:42px;font-size:14px;padding:4px 4px 4px 18px}
+.nav .btn .disc{width:32px;height:32px}
+.menu-btn{display:none;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:rgba(19,16,14,.4);color:var(--ink);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);cursor:pointer}
+.menu-btn span{display:block;width:16px;height:1.5px;background:currentColor;margin:4px auto;transition:transform .3s var(--ease)}
+.menu-open .menu-btn span:first-child{transform:translateY(2.75px) rotate(45deg)}
+.menu-open .menu-btn span:last-child{transform:translateY(-2.75px) rotate(-45deg)}
+.sheet{position:fixed;inset:0;z-index:45;background:rgba(19,16,14,.97);display:flex;flex-direction:column;justify-content:center;padding:96px var(--pad) 48px;gap:6px;opacity:0;visibility:hidden;transition:opacity .35s,visibility .35s}
+.sheet a{font-family:var(--serif);font-size:44px;line-height:1.15;letter-spacing:-.02em}
+.sheet .btn{margin-top:28px;align-self:flex-start;font-family:var(--sans);font-size:15px;line-height:1}
+.menu-open .sheet{opacity:1;visibility:visible}
+.menu-open{overflow:hidden}
+
+/* hero */
+.hero{position:relative;min-height:100vh;min-height:100dvh;display:grid;align-items:center;padding:108px 0 56px}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(32px,5vw,88px);align-items:center;width:100%}
+.hero-copy{position:relative;z-index:2}
+.status{display:inline-flex;align-items:center;gap:10px;padding:7px 14px 7px 12px;border:1px solid var(--line);border-radius:999px;font-size:13px;color:var(--ink-80);background:rgba(243,236,225,.04)}
+.status .dot{width:7px;height:7px;border-radius:50%;background:var(--ink-40)}
+.status.open .dot{background:var(--green);box-shadow:0 0 0 4px rgba(79,174,120,.18)}
+.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(52px,8.2vw,132px);line-height:.94;letter-spacing:-.035em;margin:28px 0 0}
+.hero h1 .line{display:block;overflow:hidden;padding-bottom:.06em}
+.hero h1 .line > span{display:inline-block}
+.hero h1 em{color:var(--ink-60)}
+.lede{max-width:30rem;margin:28px 0 0;font-size:17px;line-height:1.6;color:var(--ink-60);font-weight:400}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
+.hero-meta{display:flex;gap:28px;margin-top:56px;padding-top:22px;border-top:1px solid var(--line);font-size:13px;color:var(--ink-60);max-width:34rem}
+.hero-meta b{display:block;color:var(--ink);font-weight:500;font-size:14px;margin-bottom:2px}
+.hero-media{position:relative;justify-self:end;width:100%;max-width:500px}
+.frame{position:relative;aspect-ratio:9/14;border-radius:28px;overflow:hidden;background:#0d0b0a url("assets/img/hero-noche-poster.webp") center/cover;box-shadow:0 30px 80px rgba(0,0,0,.45)}
+.frame video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .6s}
+.frame video.ready{opacity:1}
+.frame::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(10,8,7,.7) 0%,rgba(10,8,7,0) 38%);pointer-events:none}
+.chip{position:absolute;left:18px;right:18px;bottom:18px;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 14px 12px 16px;border-radius:18px;background:rgba(20,16,14,.42);border:1px solid rgba(243,236,225,.14);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);font-size:13px;line-height:1.35}
+.chip b{display:block;font-weight:600;font-size:14px}
+.chip span{color:var(--ink-60)}
+.chip .when{font-family:var(--serif);font-size:30px;line-height:1;letter-spacing:-.02em;color:var(--ink)}
+.hero-media .tag{position:absolute;top:-14px;left:-22px;z-index:3;transform:rotate(-6deg);padding:8px 14px;border-radius:999px;background:var(--ink);color:#16120f;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+
+/* manifesto */
+.manifesto{padding:clamp(96px,14vw,184px) 0 clamp(80px,10vw,140px)}
+.manifesto p{font-family:var(--serif);font-size:clamp(34px,5.2vw,80px);line-height:1.02;letter-spacing:-.03em;margin:22px 0 0;max-width:15em}
+.manifesto p em{color:var(--ink-40)}
+.manifesto .sig{margin-top:28px;font-size:14px;color:var(--ink-40)}
+
+/* section head */
+.sec{padding:clamp(80px,10vw,150px) 0}
+.sec-head{display:grid;grid-template-columns:1fr minmax(0,26rem);gap:32px;align-items:end;margin-bottom:clamp(40px,6vw,72px)}
+.sec-head h2{font-family:var(--serif);font-weight:400;font-size:clamp(44px,6.4vw,96px);line-height:.95;letter-spacing:-.035em;margin:18px 0 0}
+.sec-head h2 em{color:var(--ink-60)}
+.sec-head p{margin:0;color:var(--ink-60);font-size:16px}
+
+/* carta */
+.carta{background:var(--bg-2);border-radius:48px 48px 0 0;position:relative}
+.bento{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+.tile{position:relative;border-radius:28px;overflow:hidden;background:var(--card);min-height:300px}
+.tile img,.tile video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease)}
+.tile:hover img,.tile:hover video{transform:scale(1.04)}
+.tile::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(12,10,9,.82) 0%,rgba(12,10,9,0) 52%);pointer-events:none}
+.tile .cap{position:absolute;left:24px;right:24px;bottom:22px;z-index:2}
+.tile .cap .k{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-60)}
+.tile .cap h3{font-family:var(--serif);font-weight:400;font-size:clamp(28px,2.6vw,38px);line-height:1.02;letter-spacing:-.02em;margin:6px 0 0}
+.tile .cap p{margin:8px 0 0;font-size:14px;line-height:1.5;color:var(--ink-80);max-width:32ch}
+.t1{grid-column:span 5;grid-row:span 2;min-height:640px}
+.t2{grid-column:span 4}
+.t3{grid-column:span 3}
+.t4{grid-column:span 3}
+.t5{grid-column:span 4}
+.t6{grid-column:span 6;min-height:560px}
+.t7{grid-column:span 6;min-height:560px}
+.vid-badge{position:absolute;top:18px;left:18px;z-index:2;display:flex;align-items:center;gap:8px;padding:6px 12px;border-radius:999px;background:rgba(20,16,14,.45);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);font-size:11.5px;font-weight:500;color:var(--ink-80)}
+.vid-badge::before{content:"";width:6px;height:6px;border-radius:50%;background:#e2584b}
+
+.menu-list{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,96px);margin-top:clamp(56px,8vw,104px)}
+.menu-list h3{font-size:11.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-60);margin:0 0 8px}
+.item{display:grid;grid-template-columns:1fr auto;gap:4px 24px;padding:20px 0;border-bottom:1px solid var(--line)}
+.item b{font-family:var(--serif);font-weight:400;font-size:26px;line-height:1.1;letter-spacing:-.015em}
+.item small{grid-column:1/-1;color:var(--ink-60);font-size:14.5px;line-height:1.5}
+.item i{font-style:normal;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--green);align-self:center}
+
+/* noches */
+.noches{position:relative}
+.noches-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(32px,6vw,96px);align-items:center}
+.noches h2{font-family:var(--serif);font-weight:400;font-size:clamp(48px,7vw,112px);line-height:.92;letter-spacing:-.04em;margin:18px 0 0}
+.noches h2 em{color:var(--ink-60)}
+.noches .lede{margin-top:24px}
+.facts{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:12px 40px;margin:40px 0 0;padding:0}
+.facts div{margin:0}
+.facts dt{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-40)}
+.facts dd{margin:4px 0 0;font-family:var(--serif);font-size:34px;line-height:1;letter-spacing:-.02em}
+.collage{position:relative;display:grid;grid-template-columns:repeat(6,1fr);grid-template-rows:repeat(6,minmax(60px,1fr));gap:16px;aspect-ratio:1/1.02}
+.collage figure{margin:0;border-radius:24px;overflow:hidden;position:relative;background:var(--card)}
+.collage img{width:100%;height:100%;object-fit:cover}
+.c1{grid-column:1/5;grid-row:1/5}
+.c2{grid-column:5/7;grid-row:2/5}
+.c3{grid-column:2/7;grid-row:5/7}
+.c3 img{object-position:center 35%}
+
+/* sucursales */
+.suc{background:var(--ink);color:#16120f;border-radius:48px;margin:0 clamp(8px,1.4vw,20px)}
+.suc .label{color:rgba(22,18,15,.55)}
+.suc .sec-head h2 em{color:rgba(22,18,15,.5)}
+.suc .sec-head p{color:rgba(22,18,15,.65)}
+.branches{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.branch{border-radius:28px;background:#ebe3d6;padding:clamp(24px,3vw,40px);display:flex;flex-direction:column;gap:18px;min-height:420px}
+.branch.has-img{background:#16120f url("assets/img/fachada.webp") center 0%/cover;color:var(--ink);position:relative;overflow:hidden}
+.branch.has-img::before{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(14,11,9,.96) 38%,rgba(14,11,9,.45) 100%)}
+.branch > *{position:relative}
+.branch .num{font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;opacity:.6}
+.branch h3{font-family:var(--serif);font-weight:400;font-size:clamp(40px,4.4vw,64px);line-height:.95;letter-spacing:-.03em;margin:auto 0 0}
+.branch ul{list-style:none;margin:0;padding:0;font-size:15px;line-height:1.55;opacity:.85}
+.branch .btn{align-self:flex-start;margin-top:6px}
+.branch .btn-dark{background:#16120f;color:var(--ink)}
+.branch .btn-dark .disc{background:var(--ink);color:#16120f}
+.branch.has-img .btn-dark{background:var(--ink);color:#16120f}
+.branch.has-img .btn-dark .disc{background:#16120f;color:var(--ink)}
+
+/* footer */
+.closing{padding:clamp(110px,14vw,200px) 0 40px;text-align:center}
+.closing h2{font-family:var(--serif);font-weight:400;font-size:clamp(48px,8vw,132px);line-height:.92;letter-spacing:-.04em;margin:20px auto 0;max-width:10em}
+.closing h2 em{color:var(--ink-60)}
+.closing .cta-row{justify-content:center}
+.mega{margin:clamp(80px,10vw,140px) 0 0;color:rgba(243,236,225,.08)}
+.mega svg{width:100%;height:auto;display:block}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;padding:28px 0 max(28px,env(safe-area-inset-bottom));border-top:1px solid var(--line);font-size:13px;color:var(--ink-40)}
+.foot a:hover{color:var(--ink)}
+.foot .soc{display:flex;gap:22px}
+
+/* reveal */
+.js .rv{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.js .rv.in{opacity:1;transform:none}
+.js .hero .ent{opacity:0;transform:translateY(24px);animation:up .9s var(--ease) forwards}
+.js .hero h1 .line > span{transform:translateY(110%);animation:rise 1.05s var(--ease) forwards}
+.js .hero-media.ent{transform:scale(.96) translateY(18px);animation:settle 1.4s var(--ease) .35s forwards}
+.js .nav{animation:fade .8s ease .05s both}
+@keyframes up{to{opacity:1;transform:none}}
+@keyframes rise{to{transform:none}}
+@keyframes settle{to{opacity:1;transform:none}}
+@keyframes fade{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:none}}
+
+/* responsive */
+@media (max-width:1080px){
+  .nav-links{display:none}
+  .menu-btn{display:block}
+  .nav .btn{display:none}
+  .t1{grid-column:span 12;min-height:520px;grid-row:auto}
+  .t2,.t3,.t4,.t5{grid-column:span 6}
+  .t6,.t7{grid-column:span 6}
+}
+@media (max-width:860px){
+  .hero{padding:0;align-items:end}
+  .hero .wrap{grid-template-columns:1fr;padding-top:110px;padding-bottom:40px}
+  .hero-media{position:absolute;inset:0;max-width:none;z-index:0}
+  .hero-media .tag{display:none}
+  .frame{position:absolute;inset:0;aspect-ratio:auto;border-radius:0;box-shadow:none}
+  .frame::after{background:linear-gradient(to top,rgba(19,16,14,1) 0%,rgba(19,16,14,.82) 38%,rgba(19,16,14,.15) 70%,rgba(19,16,14,.55) 100%)}
+  .chip{display:none}
+  .hero h1{text-shadow:0 16px 38px rgba(0,0,0,.32)}
+  .lede{color:var(--ink-80);text-shadow:0 2px 18px rgba(0,0,0,.42)}
+  .hero-meta{margin-top:36px}
+  .sec-head{grid-template-columns:1fr}
+  .noches-grid{grid-template-columns:1fr}
+  .menu-list{grid-template-columns:1fr}
+  .branches{grid-template-columns:1fr}
+  .carta{border-radius:32px 32px 0 0}
+  .suc{border-radius:32px}
+}
+@media (max-width:560px){
+  .t2,.t3,.t4,.t5,.t6,.t7{grid-column:span 12}
+  .tile{min-height:380px}
+  .t6,.t7{min-height:520px}
+  .cta-row .btn{width:100%;justify-content:space-between}
+  .cta-row .btn-ghost{justify-content:center}
+  .hero-meta{gap:18px;flex-wrap:wrap}
+  .facts{grid-template-columns:repeat(3,auto);gap:10px 24px}
+  .facts dd{font-size:28px}
+  .collage{gap:10px}
+  .collage figure{border-radius:18px}
+  .item b{font-size:23px}
+}
+@media (min-width:861px) and (max-height:760px){
+  .hero h1{font-size:clamp(48px,6.4vw,100px)}
+  .hero-meta{margin-top:36px}
+  .hero-media{max-width:360px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js .rv,.js .hero .ent,.js .hero h1 .line > span,.js .hero-media.ent,.js .nav{opacity:1!important;transform:none!important;animation:none!important;transition:none!important}
+  .tile img,.tile video{transition:none}
+}
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add('js')</script>
+<div class="grain" aria-hidden="true"></div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="ame-logo" viewBox="0 0 240 92">
+      <rect x="2" y="2" width="236" height="60" fill="none" stroke="currentColor" stroke-width="3.5"/>
+      <text x="131" y="47" text-anchor="middle" fill="currentColor" font-family="Manrope, sans-serif" font-weight="500" font-size="38" letter-spacing="22">AMÉ</text>
+      <text x="121.3" y="84" text-anchor="middle" fill="currentColor" font-family="Manrope, sans-serif" font-weight="600" font-size="12.5" letter-spacing="2.6">SPECIALTY ♡ COFFEE</text>
+    </symbol>
+    <symbol id="arrow" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </defs>
+</svg>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="AMÉ Specialty Coffee, inicio"><svg viewBox="0 0 240 92" role="img" aria-hidden="true"><use href="#ame-logo"/></svg></a>
+    <nav class="nav-links" aria-label="Principal">
+      <a href="#carta">La carta</a>
+      <a href="#noches">Viernes acústico</a>
+      <a href="#sucursales">Sucursales</a>
+    </nav>
+    <a class="btn btn-primary" href="https://wa.me/59175026695?text=Hola%20AM%C3%89%2C%20quiero%20reservar%20una%20mesa" target="_blank" rel="noopener">Reservar <span class="disc"><svg width="14" height="14"><use href="#arrow"/></svg></span></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false" aria-controls="sheet"><span></span><span></span></button>
+  </div>
+</header>
+<div class="sheet" id="sheet" aria-hidden="true">
+  <a href="#carta">La carta</a>
+  <a href="#noches">Viernes acústico</a>
+  <a href="#sucursales">Sucursales</a>
+  <a class="btn btn-primary" href="https://wa.me/59175026695?text=Hola%20AM%C3%89%2C%20quiero%20reservar%20una%20mesa" target="_blank" rel="noopener">Reservar por WhatsApp <span class="disc"><svg width="14" height="14"><use href="#arrow"/></svg></span></a>
+</div>
+
+<main id="top">
+  <section class="hero" aria-label="Bienvenida">
+    <div class="wrap">
+      <div class="hero-copy">
+        <div class="ent" style="animation-delay:.15s"><span class="status" id="status"><span class="dot"></span><span id="statusText">Abierto de 07:00 a 23:00</span></span></div>
+        <h1>
+          <span class="line"><span style="animation-delay:.25s">Del primer café</span></span>
+          <span class="line"><span style="animation-delay:.37s">a la <em>última</em></span></span>
+          <span class="line"><span style="animation-delay:.49s"><em>canción.</em></span></span>
+        </h1>
+        <p class="lede ent" style="animation-delay:.7s">Café de especialidad, cocina con sabor cruceño y viernes de música en vivo. Dos casas en Santa Cruz, abiertas desde que sale el sol hasta que se apagan las luces.</p>
+        <div class="cta-row ent" style="animation-delay:.85s">
+          <a class="btn btn-primary" href="https://wa.me/59175026695?text=Hola%20AM%C3%89%2C%20quiero%20reservar%20una%20mesa" target="_blank" rel="noopener">Reservá tu mesa <span class="disc"><svg width="14" height="14"><use href="#arrow"/></svg></span></a>
+          <a class="btn btn-ghost" href="#carta">Ver la carta</a>
+        </div>
+        <div class="hero-meta ent" style="animation-delay:1s">
+          <div><b>Equipetrol</b>Shopping Fidalga · Av. San Martín</div>
+          <div><b>Banzer</b>Shopping Fidalga · Av. Banzer</div>
+        </div>
+      </div>
+      <div class="hero-media ent">
+        <span class="tag">Specialty coffee · Santa Cruz</span>
+        <div class="frame">
+          <video id="heroVid" src="assets/video/hero-noche.mp4" poster="assets/img/hero-noche-poster.webp" autoplay muted loop playsinline preload="auto" aria-hidden="true"></video>
+          <div class="chip">
+            <div><b>Viernes Acústico</b><span>Terraza de Equipetrol</span></div>
+            <div class="when">21:00</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="manifesto" aria-label="Nuestra idea">
+    <div class="wrap">
+      <span class="label rv"><span class="rule"></span>Nuestra idea</span>
+      <p class="rv">El café es compartir, conversar, encontrarnos <em>y disfrutar de esos pequeños momentos que se quedan con nosotros.</em></p>
+      <div class="sig rv">— AMÉ, Día del Café</div>
+    </div>
+  </section>
+
+  <section class="sec carta" id="carta" aria-labelledby="carta-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <span class="label rv"><span class="rule"></span>La carta</span>
+          <h2 id="carta-h" class="rv">Hecho acá, <em>con lo nuestro.</em></h2>
+        </div>
+        <p class="rv">Granos de especialidad en la barra, frutas cruceñas en los vasos y recetas que celebran a Bolivia en el plato: del cuñapé de la tarde al mojito de mocochinchi del viernes.</p>
+      </div>
+
+      <div class="bento">
+        <article class="tile t1 rv">
+          <img src="assets/img/mocca.webp" alt="Mocca con chocolate en taza de vidrio y un latte detrás" loading="lazy">
+          <div class="cap"><span class="k">Barra de café</span><h3>Mocca &amp; chocolate caliente</h3><p>Para los días frescos, o para cualquier excusa.</p></div>
+        </article>
+        <article class="tile t2 rv">
+          <img src="assets/img/keperi.webp" alt="Sándwich de keperi gratinado en focaccia, con soda artesanal" loading="lazy">
+          <div class="cap"><span class="k">Cocina</span><h3>Sándwich de Keperi</h3></div>
+        </article>
+        <article class="tile t3 rv">
+          <video data-lazy src="assets/video/sodas.mp4" poster="assets/img/sodas-poster.webp" muted loop playsinline preload="none" aria-hidden="true"></video>
+          <span class="vid-badge">Desde la barra</span>
+          <div class="cap"><span class="k">Sin alcohol</span><h3>Sodas artesanales</h3></div>
+        </article>
+        <article class="tile t4 rv">
+          <img src="assets/img/promo-cambita.webp" alt="Cappuccino con arte latte junto a un cuñapé" loading="lazy">
+          <div class="cap"><span class="k">La tarde</span><h3>Promo Cambita</h3></div>
+        </article>
+        <article class="tile t5 rv">
+          <img src="assets/img/cesar.webp" alt="Ensalada César con pollo grillado y crutones" loading="lazy">
+          <div class="cap"><span class="k">Cocina</span><h3>Nuestra César</h3></div>
+        </article>
+        <article class="tile t6 rv">
+          <video data-lazy src="assets/video/mojito.mp4" poster="assets/img/mojito-poster.webp" muted loop playsinline preload="none" aria-hidden="true"></video>
+          <span class="vid-badge">Desde la barra</span>
+          <div class="cap"><span class="k">Coctelería</span><h3>Mojito de Mocochinchi</h3><p>Ese sabor tan nuestro, con hierbabuena y mucho hielo.</p></div>
+        </article>
+        <article class="tile t7 rv">
+          <img src="assets/img/cocteles.webp" alt="Sour de achachairú con espuma y un mojito de mocochinchi" loading="lazy">
+          <div class="cap"><span class="k">Coctelería</span><h3>Sour de Achachairú</h3><p>Dulce, ácido y bien cruceño.</p></div>
+        </article>
+      </div>
+
+      <div class="menu-list">
+        <div class="rv">
+          <h3>Para tomar</h3>
+          <div class="item"><b>Cappuccino</b><small>Espresso de especialidad, leche texturizada y arte latte.</small></div>
+          <div class="item"><b>Mocca</b><small>Espresso, chocolate y leche, en taza de vidrio.</small></div>
+          <div class="item"><b>Sodas artesanales</b><small>Mora, mocochinchi, maracuyá, jengibre y limón o frutilla.</small></div>
+          <div class="item"><b>Sour de Achachairú</b><small>La fruta más cruceña, en versión cóctel.</small><i>Bar</i></div>
+          <div class="item"><b>Mojito de Mocochinchi</b><small>El clásico cubano, con acento boliviano.</small><i>Bar</i></div>
+        </div>
+        <div class="rv">
+          <h3>Para comer</h3>
+          <div class="item"><b>Sándwich de Keperi</b><small>Keperi horneado, queso criollo gratinado y focaccia de romero, con salsa de tamarindo y pico de gallo picante.</small></div>
+          <div class="item"><b>Panini AMÉ</b><small>Gratinado y crujiente, ideal con una soda de la casa.</small></div>
+          <div class="item"><b>Ensalada César</b><small>Pollo grillado, crutones y nuestro aderezo.</small></div>
+          <div class="item"><b>Promo Cambita</b><small>Cappuccino, sonso y cuñapé: el gustito perfecto para la tarde.</small><i>Tarde</i></div>
+          <div class="item"><b>Menú ejecutivo</b><small>Almuerzo completo de lunes a viernes; la carta cambia cada semana.</small><i>Almuerzo</i></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec noches" id="noches" aria-labelledby="noches-h">
+    <div class="wrap noches-grid">
+      <div>
+        <span class="label rv"><span class="rule"></span>Viernes Acústico</span>
+        <h2 id="noches-h" class="rv">Los viernes, <em>la terraza canta.</em></h2>
+        <p class="lede rv">Luces colgando de los árboles, algo rico para tomar y música en vivo con artistas como David Dionich. Traé a tus amigos y reservá con tiempo: la terraza se llena.</p>
+        <dl class="facts rv">
+          <div><dt>Día</dt><dd>Viernes</dd></div>
+          <div><dt>Hora</dt><dd>21:00</dd></div>
+          <div><dt>Dónde</dt><dd>Equipetrol</dd></div>
+        </dl>
+        <div class="cta-row rv">
+          <a class="btn btn-primary" href="https://wa.me/59175026695?text=Hola%20AM%C3%89%2C%20quiero%20reservar%20para%20el%20Viernes%20Ac%C3%BAstico" target="_blank" rel="noopener">Reservar para el viernes <span class="disc"><svg width="14" height="14"><use href="#arrow"/></svg></span></a>
+          <a class="btn btn-ghost" href="https://www.instagram.com/ame.specialtycoffee/" target="_blank" rel="noopener">Ver el próximo show</a>
+        </div>
+      </div>
+      <div class="collage">
+        <figure class="c1 rv"><img src="assets/img/acustico-1.webp" alt="Terraza llena de gente bajo luces colgantes durante el acústico" loading="lazy"></figure>
+        <figure class="c2 rv"><img src="assets/img/acustico-2.webp" alt="Cantante con micrófono frente al público en AMÉ" loading="lazy"></figure>
+        <figure class="c3 rv"><img src="assets/img/acustico-3.webp" alt="Cantante sonriendo frente al público en la terraza de noche" loading="lazy"></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec suc" id="sucursales" aria-labelledby="suc-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <span class="label rv"><span class="rule"></span>Sucursales</span>
+          <h2 id="suc-h" class="rv">Dos casas, <em>un mismo café.</em></h2>
+        </div>
+        <p class="rv">Las dos sucursales están en Shopping Fidalga y abren de 07:00 a 23:00. El Viernes Acústico se vive en Equipetrol.</p>
+      </div>
+      <div class="branches">
+        <article class="branch has-img rv">
+          <span class="num">01 — Equipetrol</span>
+          <h3>AMÉ Equipetrol</h3>
+          <ul><li>Shopping Fidalga, Av. San Martín</li><li>07:00 – 23:00 · Terraza y música en vivo</li></ul>
+          <a class="btn btn-dark" href="https://www.google.com/maps/search/?api=1&query=AM%C3%89%20Specialty%20Coffee%20Shopping%20Fidalga%20Av.%20San%20Mart%C3%ADn%20Santa%20Cruz%20Bolivia" target="_blank" rel="noopener">Cómo llegar <span class="disc"><svg width="14" height="14"><use href="#arrow"/></svg></span></a>
+        </article>
+        <article class="branch rv">
+          <span class="num">02 — Banzer</span>
+          <h3>AMÉ Banzer</h3>
+          <ul><li>Shopping Fidalga, Av. Banzer</li><li>07:00 – 23:00 · Menú ejecutivo con sopa</li></ul>
+          <a class="btn btn-dark" href="https://www.google.com/maps/search/?api=1&query=AM%C3%89%20Specialty%20Coffee%20Shopping%20Fidalga%20Av.%20Banzer%20Santa%20Cruz%20Bolivia" target="_blank" rel="noopener">Cómo llegar <span class="disc"><svg width="14" height="14"><use href="#arrow"/></svg></span></a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing" aria-labelledby="close-h">
+    <div class="wrap">
+      <span class="label rv">Reservas · 750 26695</span>
+      <h2 id="close-h" class="rv">Te guardamos <em>una mesa.</em></h2>
+      <div class="cta-row rv" style="margin-top:40px">
+        <a class="btn btn-primary" href="https://wa.me/59175026695?text=Hola%20AM%C3%89%2C%20quiero%20reservar%20una%20mesa" target="_blank" rel="noopener">Escribinos por WhatsApp <span class="disc"><svg width="14" height="14"><use href="#arrow"/></svg></span></a>
+        <a class="btn btn-ghost" href="https://www.instagram.com/ame.specialtycoffee/" target="_blank" rel="noopener">@ame.specialtycoffee</a>
+      </div>
+      <div class="mega" aria-hidden="true"><svg viewBox="0 0 240 92"><use href="#ame-logo"/></svg></div>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap foot">
+  <span>© <span id="yr">2026</span> AMÉ Specialty Coffee · Santa Cruz de la Sierra, Bolivia</span>
+  <span class="soc">
+    <a href="https://www.instagram.com/ame.specialtycoffee/" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://www.facebook.com/amecafebar/" target="_blank" rel="noopener">Facebook</a>
+    <a href="https://wa.me/59175026695" target="_blank" rel="noopener">WhatsApp</a>
+  </span>
+</footer>
+
+<script>
+(() => {
+  const $ = s => document.querySelector(s);
+  $('#yr').textContent = new Date().getFullYear();
+
+  // nav state
+  const nav = $('#nav');
+  const onScroll = () => nav.classList.toggle('scrolled', scrollY > 40);
+  onScroll(); addEventListener('scroll', onScroll, {passive:true});
+
+  // mobile menu
+  const btn = $('#menuBtn'), sheet = $('#sheet'), root = document.documentElement;
+  const setMenu = open => {
+    root.classList.toggle('menu-open', open);
+    btn.setAttribute('aria-expanded', open); btn.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+    sheet.setAttribute('aria-hidden', !open);
+  };
+  btn.addEventListener('click', () => setMenu(!root.classList.contains('menu-open')));
+  sheet.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+  addEventListener('keydown', e => e.key === 'Escape' && setMenu(false));
+  addEventListener('resize', () => innerWidth > 1080 && setMenu(false));
+
+  // open / closed, on Santa Cruz time (UTC-4, no DST)
+  const st = $('#status'), stx = $('#statusText');
+  const tick = () => {
+    const now = new Date(Date.now() - 4 * 3600e3);
+    const m = now.getUTCHours() * 60 + now.getUTCMinutes();
+    const open = m >= 7 * 60 && m < 23 * 60;
+    st.classList.toggle('open', open);
+    stx.textContent = open ? 'Abierto ahora · hasta las 23:00' : 'Cerrado · abrimos a las 07:00';
+  };
+  tick(); setInterval(tick, 60e3);
+
+  // hero video fade-in
+  const hv = $('#heroVid');
+  const ready = () => hv.classList.add('ready');
+  if (hv.readyState >= 2) ready(); else hv.addEventListener('loadeddata', ready, {once:true});
+
+  // reveals
+  const els = document.querySelectorAll('.rv');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    }), {threshold:.12, rootMargin:'0px 0px -6% 0px'});
+    els.forEach((el, i) => { el.style.transitionDelay = (i % 4) * 70 + 'ms'; io.observe(el); });
+  } else els.forEach(el => el.classList.add('in'));
+  setTimeout(() => document.querySelectorAll('.rv:not(.in)').forEach(el => {
+    const r = el.getBoundingClientRect(); if (r.top < innerHeight) el.classList.add('in');
+  }), 2500);
+
+  // tile videos: play only when visible
+  const vids = document.querySelectorAll('video[data-lazy]');
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if ('IntersectionObserver' in window) {
+    const vio = new IntersectionObserver(es => es.forEach(e => {
+      const v = e.target;
+      if (e.isIntersecting) { if (v.preload === 'none') v.preload = 'auto'; if (!reduce) v.play().catch(() => {}); }
+      else v.pause();
+    }), {threshold:.25});
+    vids.forEach(v => vio.observe(v));
+  }
+  if (reduce) { hv.pause(); hv.removeAttribute('autoplay'); }
+})();
+</script>
+</body>
+</html>
